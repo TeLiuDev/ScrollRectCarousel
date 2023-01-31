@@ -1,0 +1,31 @@
+{
+  "name": "com.te.liu.scrollrectcarousel",
+  "version": "1.0.88",
+  "displayName": "ScrollRectCarousel",
+  "description": "A more optimized scroll list implementation",
+  "unity": "2021.3",
+  "documentationUrl": "",
+  "changelogUrl": "",
+  "licensesUrl": "",
+  "dependencies": {
+    "com.unity.modules.ui": "1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "samples": [
+    {
+      "displayName": "ScrollRect Carousel Example",
+      "description": "Example of the scroll rect carousel",
+      "path": "Samples~/TestbedAppExample"
+    }
+  ],
+  "keywords": [
+    "Scroll List",
+    "ScrollRect"
+  ],
+  "author": {
+    "name": "Te Liu"
+  }
+}

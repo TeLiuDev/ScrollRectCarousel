@@ -1,0 +1,1 @@
+Please refer to the ScrollRectCarousel.PDF file in this folder for more information
