@@ -6,13 +6,14 @@ using System;
 [Serializable]
 public class AsyncFixedDimensionActivityPayload
 {
-    public string icon_original;
-    public string icontext;
+  public string id;  
+  public string icontext;
+  public string icon_url;
 }
 
 
 [Serializable]
 public class AsyncFixedDimensionPayload
 {
-    public Dictionary<string,AsyncFixedDimensionActivityPayload> activity_info;
+    public List<AsyncFixedDimensionActivityPayload> activity_info;
 }

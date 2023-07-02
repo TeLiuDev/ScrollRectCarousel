@@ -1,3 +1,5 @@
+v1.0.89 - Reformatted json data to remove Newtonsoft dependency for async scrollrect example
+
 v1.0.88 - Added ability to set line item template via code
 
 v1.0.87 - Added Async image downloading list in the samples

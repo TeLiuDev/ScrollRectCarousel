@@ -1,13 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using com.te.liu.scrollrectcarousel;
 using System;
-using UnityEngine.UI;
 using System.Threading.Tasks;
 using System.Threading;
-using Newtonsoft.Json;
-using System.Linq;
 using UnityEngine.Networking;
 
 [Serializable]
@@ -83,8 +79,8 @@ public class AsyncFixedDimensionCarouselController : MonoBehaviour, IScrollRectC
     {
         listVert.SetLineItemTemplate(CreateLineItem);
         
-        payload = JsonConvert.DeserializeObject<AsyncFixedDimensionPayload>(rawPayload.text);
-        activity_info = payload.activity_info.Values.ToList<AsyncFixedDimensionActivityPayload>();
+        payload = JsonUtility.FromJson<AsyncFixedDimensionPayload>(rawPayload.text);
+        activity_info = payload.activity_info;
 
         if (dataList == null)
         {
@@ -111,7 +107,7 @@ public class AsyncFixedDimensionCarouselController : MonoBehaviour, IScrollRectC
                 {
                     if (curRowItem + k < activity_info.Count)
                     {
-                        newData.thumbnailItems[k] = new AsyncFixedDimensionItemTestData(activity_info[curRowItem + k].icontext, null, activity_info[curRowItem + k].icon_original);
+                        newData.thumbnailItems[k] = new AsyncFixedDimensionItemTestData(activity_info[curRowItem + k].icontext, null, activity_info[curRowItem + k].icon_url);
                     }
                     else
                     {
@@ -297,7 +293,7 @@ public class AsyncFixedDimensionCarouselController : MonoBehaviour, IScrollRectC
             // If we haven't downloaded the image download it
             if (curRowData != null && curRowData.thumbnail == null)
             {                
-                curRowData.thumbnail = await GetImage(string.Format("https://picsum.photos/id/{0}/200/300", imageIndex), token);
+                curRowData.thumbnail = await GetImage(curRowData.thumbnailURL, token);
                 imageIndex++;
             }
         }

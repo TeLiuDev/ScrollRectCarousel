@@ -1,6 +1,6 @@
 {
   "name": "com.te.liu.scrollrectcarousel",
-  "version": "1.0.88",
+  "version": "1.0.89",
   "displayName": "ScrollRectCarousel",
   "description": "A more optimized scroll list implementation",
   "unity": "2021.3",
